@@ -1,17 +1,39 @@
-# event_hub
+# 🎫 Event Hub
 
-A new Flutter project.
+Event Hub is a Flutter-based event management application that allows users to discover upcoming events, view event details, and register for events through a simple and user-friendly interface.
 
-## Getting Started
+## 📱 Features
 
-This project is a starting point for a Flutter application.
+- 🔐 User Login
+- 📝 User Registration
+- 🏠 Event Hub Home Page
+- 🎫 View Upcoming Events
+- 📋 View Detailed Event Information
+- ✅ Register for Events
+- 🚪 Logout
+- 📱 Responsive Flutter UI
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Technologies Used
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- **Flutter**
+- **Dart**
+- **Material Design**
+- **VS Code**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📂 Project Structure
+
+```text
+event_hub/
+│
+├── lib/
+│   ├── main.dart
+│   ├── login.dart
+│   ├── register.dart
+│   ├── home.dart
+│   └── event_details.dart
+│
+├── android/
+├── web/
+├── test/
+├── pubspec.yaml
+└── README.md
