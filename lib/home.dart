@@ -112,15 +112,29 @@ class HomePage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              const Text(
-                'Upcoming Events',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+    const Text(
+      'Upcoming Events',
+      style: TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
 
-              const SizedBox(height: 15),
+    Text(
+      '${events.length} Events',
+      style: const TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.bold,
+        color: Colors.deepPurple,
+      ),
+    ),
+  ],
+),
+
+const SizedBox(height: 15),
 
               ListView.builder(
                 shrinkWrap: true,
