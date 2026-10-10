@@ -156,11 +156,21 @@ class HomePage extends StatelessWidget {
 
                       subtitle: Padding(
                         padding: const EdgeInsets.only(top: 8),
-                        child: Text(
-                          '${event['date']}\n${event['location']}',
-                        ),
-                      ),
-
+                        child: Column( 
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('${event['date']}\n${event['location']}'),
+                            const SizedBox(height: 8),
+                            const Text(
+                              'Tap to view details',
+                              style: TextStyle(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.w500,
+                              ),
+                             ),  
+                           ],
+                          ), 
+                         ),  
                       trailing: const Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
