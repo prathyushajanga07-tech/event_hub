@@ -86,18 +86,28 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              LayoutBuilder(
-                builder: (context, constraints) {
-                  final isNarrow = constraints.maxWidth < 400;
-
-                  return Text(
-                    'Welcome to Event Hub 👋',
-                    style: TextStyle(
-                      fontSize: isNarrow ? 23 : 28,
-                      fontWeight: FontWeight.bold,
-                    ),
+              TweenAnimationBuilder<double>(
+                tween: Tween<double>(begin: 0, end: 1),
+                duration: const Duration(milliseconds: 900),
+                builder: (context, opacity, child) {
+                  return Opacity(
+                    opacity: opacity,
+                    child: child,
                   );
                 },
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isNarrow = constraints.maxWidth < 400;
+
+                    return Text(
+                      'Welcome to Event Hub 👋',
+                      style: TextStyle(
+                        fontSize: isNarrow ? 23 : 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    );
+                  },
+                ),
               ),
               const SizedBox(height: 8),
               const Text(
