@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'event_details.dart';
 import 'login.dart';
+import 'widgets/event_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -61,16 +62,12 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Event Hub',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-
         actions: [
           IconButton(
             tooltip: 'Logout',
             icon: const Icon(Icons.logout),
-
             onPressed: () {
               Navigator.pushAndRemoveUntil(
                 context,
@@ -83,30 +80,26 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),
-
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-
             children: [
               LayoutBuilder(
                 builder: (context, constraints) {
                   final isNarrow = constraints.maxWidth < 400;
-                  return Text( 
+
+                  return Text(
                     'Welcome to Event Hub 👋',
                     style: TextStyle(
                       fontSize: isNarrow ? 23 : 28,
                       fontWeight: FontWeight.bold,
                     ),
-                  );   
+                  );
                 },
               ),
-
               const SizedBox(height: 8),
-
               const Text(
                 'Discover exciting events happening around you.',
                 style: TextStyle(
@@ -114,9 +107,7 @@ class HomePage extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
-
               const SizedBox(height: 25),
-
               const Text(
                 'Upcoming Events',
                 style: TextStyle(
@@ -124,79 +115,33 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               const SizedBox(height: 15),
-
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-
                 itemCount: events.length,
-
                 itemBuilder: (context, index) {
                   final event = events[index];
 
-                  return Card(
-                    margin: const EdgeInsets.only(bottom: 15),
-                    elevation: 4,
-
-                    child: ListTile(
-                      contentPadding: const EdgeInsets.all(15),
-
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Icon(
-                          getIcon(event['icon']!),
-                          size: 30,
-                        ),
-                      ),
-
-                      title: Text(
-                        event['title']!,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(top: 8),
-                        child: Column( 
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('${event['date']}\n${event['location']}'),
-                            const SizedBox(height: 8),
-                            const Text(
-                              'Tap to view details',
-                              style: TextStyle(
-                                color: Colors.deepPurple,
-                                fontWeight: FontWeight.w500,
-                              ),
-                             ),  
-                           ],
-                          ), 
-                         ),  
-                      trailing: const Icon(
-                        Icons.arrow_forward_ios,
-                        size: 18,
-                      ),
-
-                      onTap: () {
-                        Navigator.push(
-                          context,
-
-                          MaterialPageRoute(
-                            builder: (context) => EventDetailsPage(
-                              title: event['title']!,
-                              date: event['date']!,
-                              location: event['location']!,
-                              description: event['description']!,
-                              icon: getIcon(event['icon']!),
-                            ),
+                  return EventCard(
+                    title: event['title']!,
+                    date: event['date']!,
+                    location: event['location']!,
+                    icon: getIcon(event['icon']!),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EventDetailsPage(
+                            title: event['title']!,
+                            date: event['date']!,
+                            location: event['location']!,
+                            description: event['description']!,
+                            icon: getIcon(event['icon']!),
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   );
                 },
               ),
