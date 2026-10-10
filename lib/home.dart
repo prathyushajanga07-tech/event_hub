@@ -92,12 +92,17 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
-              const Text(
-                'Welcome to Event Hub 👋',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  final isNarrow = constraints.maxWidth < 400;
+                  return Text( 
+                    'Welcome to Event Hub 👋',
+                    style: TextStyle(
+                      fontSize: isNarrow ? 23 : 28,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );   
+                },
               ),
 
               const SizedBox(height: 8),
@@ -170,11 +175,21 @@ const SizedBox(height: 15),
 
                       subtitle: Padding(
                         padding: const EdgeInsets.only(top: 8),
-                        child: Text(
-                          '${event['date']}\n${event['location']}',
-                        ),
-                      ),
-
+                        child: Column( 
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('${event['date']}\n${event['location']}'),
+                            const SizedBox(height: 8),
+                            const Text(
+                              'Tap to view details',
+                              style: TextStyle(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.w500,
+                              ),
+                             ),  
+                           ],
+                          ), 
+                         ),  
                       trailing: const Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
