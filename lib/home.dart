@@ -92,12 +92,17 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
-              const Text(
-                'Welcome to Event Hub 👋',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  final isNarrow = constraints.maxWidth < 400;
+                  return Text( 
+                    'Welcome to Event Hub 👋',
+                    style: TextStyle(
+                      fontSize: isNarrow ? 23 : 28,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );   
+                },
               ),
 
               const SizedBox(height: 8),
