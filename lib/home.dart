@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'event_details.dart';
 import 'login.dart';
 import 'widgets/event_card.dart';
+import 'api_demo.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -65,6 +67,18 @@ class HomePage extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         actions: [
+          IconButton(
+            tooltip: 'API Demo',
+            icon: const Icon(Icons.cloud_download),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ApiDemoPage(),
+                ),
+              );
+            },
+          ),
           IconButton(
             tooltip: 'Logout',
             icon: const Icon(Icons.logout),
