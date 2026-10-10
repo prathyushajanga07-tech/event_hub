@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'register.dart';
@@ -51,9 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                       size: 70,
                       color: Colors.deepPurple,
                     ),
-
                     const SizedBox(height: 15),
-
                     const Text(
                       'Event Hub',
                       style: TextStyle(
@@ -62,18 +61,14 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.deepPurple,
                       ),
                     ),
-
                     const SizedBox(height: 8),
-
                     const Text(
                       'Discover. Register. Experience.',
                       style: TextStyle(
                         color: Colors.grey,
                       ),
                     ),
-
                     const SizedBox(height: 30),
-
                     TextField(
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
@@ -83,9 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                         border: OutlineInputBorder(),
                       ),
                     ),
-
                     const SizedBox(height: 15),
-
                     TextField(
                       controller: passwordController,
                       obscureText: true,
@@ -95,9 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                         border: OutlineInputBorder(),
                       ),
                     ),
-
                     const SizedBox(height: 25),
-
                     SizedBox(
                       width: double.infinity,
                       height: 50,
@@ -109,11 +100,10 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-
                     const SizedBox(height: 15),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    Wrap(
+                      alignment: WrapAlignment.center,
+                      crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
                         const Text("Don't have an account? "),
                         TextButton(
