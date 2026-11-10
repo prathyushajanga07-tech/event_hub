@@ -11,11 +11,13 @@ Description: Explored Flutter widgets such as Text, Container, and other UI elem
 Experiment 3: Responsive UI Design
 Description: Designed a responsive user interface that adapts to different screen sizes. Used LayoutBuilder and breakpoint conditions to adjust UI elements according to the available screen width.
 <img width="293" height="356" alt="image" src="https://github.com/user-attachments/assets/a87a3813-bc55-4c11-a0ad-ca1e2e4c806e" />
+
 Experiment 4: Navigation Between Screens
 Description: Implemented navigation between different screens of the Event Hub application. Users can navigate between Login, Registration, Home, and Event Details screens.
 <img width="957" height="505" alt="image" src="https://github.com/user-attachments/assets/9c80de29-4ada-4598-bed2-084b0af4b0e8" />
 Experiment 5: Stateful and Stateless Widgets
 Description: Explored StatefulWidget and StatelessWidget in Flutter. Used StatelessWidget for static UI components and StatefulWidget with setState() to update the interface when application state changes.
+
 Experiment 6: Custom Widgets and Themes
 Description: Created reusable custom widgets to display event information in the Event Hub application. Applied styling, colors, text styles, and consistent UI design to improve the appearance of the application.
 <img width="959" height="508" alt="image" src="https://github.com/user-attachments/assets/0f8953d9-6cb3-4956-a7b3-1aabc47ee49a" />
@@ -27,6 +29,7 @@ Description: Implemented a fade-in animation using Flutter's TweenAnimationBuild
 <img width="956" height="506" alt="image" src="https://github.com/user-attachments/assets/9ff22774-014f-4ade-bcd7-e854e00ab026" />
 Experiment 9: REST API Integration
 Description: Integrated a REST API into the Event Hub application to fetch data from an external server. Used HTTP GET requests and JSON parsing to retrieve and display posts with loading and error handling.
+
 Experiment 10: Testing and Debugging
 Description: Performed widget testing to verify the functionality of the Event Hub application. Used Flutter testing and debugging tools to check application behavior and identify potential issues.
 <img width="960" height="508" alt="image" src="https://github.com/user-attachments/assets/5339612b-2095-4385-a3c3-8a83103a471d" />
